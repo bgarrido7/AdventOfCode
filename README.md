@@ -10,6 +10,6 @@ I wanted to learn **JavaScript** by attempting to do the advent of code from [20
 
 ### How to Run code
 
-open terminal and call the directory of teh desired file, then run the command
+open terminal and call the directory of the desired file, then run the command
 
 > node name.js
