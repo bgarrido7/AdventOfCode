@@ -1,5 +1,5 @@
-//const input = require('fs').readFileSync('./example.txt').toString().split('\n');
-const input = require('fs').readFileSync('./input.txt').toString().split('\n');
+const input = require('fs').readFileSync('./example.txt').toString().split('\n');
+//const input = require('fs').readFileSync('./input.txt').toString().split('\n');
 
 //retrieved from stack overflow
 function findCommon(array)
@@ -54,6 +54,17 @@ function checkID(){
 
             if(test_line == 'Guard'){
           //  case 'Guard':
+          if(array[indx-1]!=undefined)
+                if(array[indx-1].split(' ')[2]=='falls'){
+
+                    for( let i = sleep ; i < wake ; i++)
+                        guards[guards.indexOf(guards.find(x=>x.guard_id==id))].sleep_min.push(parseInt(i))
+                    
+                    guards[guards.indexOf(guards.find(x=>x.guard_id==id))].asleep_count = wake-sleep
+                
+                    }  
+                
+
                 id = line.split('#')[1].split(' ')[0]  
                 let index = guards.indexOf(guards.find(x=>x.guard_id==id)) //get the guards that had this id
 
@@ -73,19 +84,20 @@ function checkID(){
                 if(array[indx-1].split(' ')[2]=='wakes' ) return;
 
                 wake = parseInt( array[indx].split(':')[1].split(']') )
-                console.log(id, sleep, wake)
+                //console.log(id, sleep, wake)
 
                 let index = guards.indexOf(guards.find(x=>x.guard_id==id)) //get the guards that had this id
 
                 if( index > -1){ //ja existe index
-                    console.log( wake ,'-', sleep)
+                   // console.log( wake ,'-', sleep)
                         guards[index].asleep_count +=  wake - sleep //aqui queremos calcular os valores do PRIMEIRO falls asleep e PRIMERO wakes up
                         for( let i = sleep ; i < wake ; i++){
                             guards[index].sleep_min.push(parseInt(i))
                         }
                 }
                 else {
-                    console.log( wake ,'-', sleep)
+                   // console.log( wake ,'-', sleep)
+
 
                     for( let i = sleep ; i < wake ; i++)
                         guards[guards.indexOf(guards.find(x=>x.guard_id==id))].sleep_min.push(parseInt(i))
@@ -94,11 +106,11 @@ function checkID(){
                 
                     }  
 
-               
+/*               
                 console.log('\n------\nguards:')
                 guards.forEach(n => console.log(n.guard_id, n.asleep_count))
                 console.log( "\n---\n")
-
+*/
 
         }
 
