@@ -52,10 +52,14 @@ function checkID(){
         let test_line = array[indx].split(' ')[2]
        // switch(){
 
-            if(test_line == 'Guard')
+            if(test_line == 'Guard'){
           //  case 'Guard':
                 id = line.split('#')[1].split(' ')[0]  
+                let index = guards.indexOf(guards.find(x=>x.guard_id==id)) //get the guards that had this id
 
+                if( index < -0) //new index
+                guards.push({guard_id: id, sleep_min: [], asleep_count:0})
+            }
             else if(test_line == 'falls'){
            // case 'falls':
 
@@ -69,20 +73,32 @@ function checkID(){
                 if(array[indx-1].split(' ')[2]=='wakes' ) return;
 
                 wake = parseInt( array[indx].split(':')[1].split(']') )
+                console.log(id, sleep, wake)
 
                 let index = guards.indexOf(guards.find(x=>x.guard_id==id)) //get the guards that had this id
 
                 if( index > -1){ //ja existe index
+                    console.log( wake ,'-', sleep)
                         guards[index].asleep_count +=  wake - sleep //aqui queremos calcular os valores do PRIMEIRO falls asleep e PRIMERO wakes up
                         for( let i = sleep ; i < wake ; i++){
                             guards[index].sleep_min.push(parseInt(i))
                         }
                 }
                 else {
-                    guards.push({guard_id: id, sleep_min: [], asleep_count:wake-sleep})
+                    console.log( wake ,'-', sleep)
+
                     for( let i = sleep ; i < wake ; i++)
                         guards[guards.indexOf(guards.find(x=>x.guard_id==id))].sleep_min.push(parseInt(i))
-                }  
+                    
+                    guards[guards.indexOf(guards.find(x=>x.guard_id==id))].asleep_count = wake-sleep
+                
+                    }  
+
+               
+                console.log('\n------\nguards:')
+                guards.forEach(n => console.log(n.guard_id, n.asleep_count))
+                console.log( "\n---\n")
+
 
         }
 
