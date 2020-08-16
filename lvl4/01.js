@@ -1,4 +1,4 @@
-// const input = require('fs').readFileSync('./example.txt').toString().split('\n');
+//const input = require('fs').readFileSync('./example.txt').toString().split('\n');
 const input = require('fs').readFileSync('./input.txt').toString().split('\n');
 
 //retrieved from stack overflow
@@ -25,7 +25,7 @@ function findCommon(array)
 }
 
 
-let temp = [], sorted_input
+let temp = [], sorted_input=input
 
 if( input[0].search('#') < 0 ){ //if input doesn't start with the guard id
     let i = 0
@@ -38,33 +38,42 @@ if( input[0].search('#') < 0 ){ //if input doesn't start with the guard id
     }
     sorted_input = input.concat(temp)
 }
-//console.log(sorted_input)
 
 function checkID(){
 
     const guards = []
     let id = -1
     let max = 0
-
+    let sleep, wake
     let id_res, min
 
-    sorted_input.forEach( line => {
+    sorted_input.forEach( (line, indx, array) => {
        
-        switch(line.split(' ')[2]){
+        let test_line = array[indx].split(' ')[2]
+       // switch(){
 
-            case 'Guard':
-                id = line.split('#')[1].split(' ')[0]   
+            if(test_line == 'Guard')
+          //  case 'Guard':
+                id = line.split('#')[1].split(' ')[0]  
 
-            case 'falls':
-                sleep = parseInt( line.split(':')[1].split(']'))  
+            else if(test_line == 'falls'){
+           // case 'falls':
 
-            case 'wakes':
-                wake = parseInt( line.split(':')[1].split(']') )
+                if(array[indx-1].split(' ')[2]=='falls') return
+
+                sleep = parseInt( array[indx].split(':')[1].split(']')) 
+            } 
+
+            else if(test_line == 'wakes'){
+           // case 'wakes':
+                if(array[indx-1].split(' ')[2]=='wakes' ) return;
+
+                wake = parseInt( array[indx].split(':')[1].split(']') )
 
                 let index = guards.indexOf(guards.find(x=>x.guard_id==id)) //get the guards that had this id
 
                 if( index > -1){ //ja existe index
-                        guards[index].asleep_count +=  wake - sleep
+                        guards[index].asleep_count +=  wake - sleep //aqui queremos calcular os valores do PRIMEIRO falls asleep e PRIMERO wakes up
                         for( let i = sleep ; i < wake ; i++){
                             guards[index].sleep_min.push(parseInt(i))
                         }
@@ -73,11 +82,13 @@ function checkID(){
                     guards.push({guard_id: id, sleep_min: [], asleep_count:wake-sleep})
                     for( let i = sleep ; i < wake ; i++)
                         guards[guards.indexOf(guards.find(x=>x.guard_id==id))].sleep_min.push(parseInt(i))
-                }    
+                }  
+
         }
 
  })
-    guards.forEach(elem => {
+
+ guards.forEach(elem => {
         if (max < elem.asleep_count){
             max = elem.asleep_count
             id_res = parseInt(elem.guard_id)
