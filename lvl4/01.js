@@ -1,7 +1,7 @@
- const input = require('fs').readFileSync('./example.txt').toString().split('\n');
-//const line = require('fs').readFileSync('./input.txt').toString().split('\n');
+// const input = require('fs').readFileSync('./example.txt').toString().split('\n');
+const input = require('fs').readFileSync('./input.txt').toString().split('\n');
 
-//thank you stack overflow
+//retrieved from stack overflow
 function findCommon(array)
 {
     if(array.length == 0)
@@ -24,6 +24,21 @@ function findCommon(array)
     return maxEl;
 }
 
+
+let temp = [], sorted_input
+
+if( input[0].search('#') < 0 ){ //if input doesn't start with the guard id
+    let i = 0
+
+    while(true){        
+        if(input[0].search('#') > -1)
+            break
+        temp.push(input[0])        
+        input.shift()
+    }
+    sorted_input = input.concat(temp)
+}
+
 function checkID(){
 
     const guards = []
@@ -32,7 +47,7 @@ function checkID(){
 
     let id_res, min
 
-    input.forEach( line => {//temos de dar 2 voltas para o input grande
+    input.forEach( line => {
        
         switch(line.split(' ')[2]){
 
@@ -50,25 +65,17 @@ function checkID(){
                 if( index > -1){ //ja existe index
                         guards[index].asleep_count +=  wake - sleep
                         for( let i = sleep ; i < wake ; i++){
-                            guards[index].sleep_min.push(parseInt(i))//.toString().slice(-1))) //=  guards[index].sleep_min.concat()
+                            guards[index].sleep_min.push(parseInt(i))
                         }
                 }
                 else {
                     guards.push({guard_id: id, sleep_min: [], asleep_count:wake-sleep})
                     for( let i = sleep ; i < wake ; i++)
-                        guards[guards.indexOf(guards.find(x=>x.guard_id==id))].sleep_min.push(parseInt(i))//.toString().slice(-1))) 
+                        guards[guards.indexOf(guards.find(x=>x.guard_id==id))].sleep_min.push(parseInt(i))
                 }    
         }
 
  })
-
- 
-
-
- //ir buscar o id do guarda que tem o alseep_count maior
-   //    console.log("--------\nguard array->",guards, "\n\n")
-
-
     guards.forEach(elem => {
         if (max < elem.asleep_count){
             max = elem.asleep_count
@@ -79,8 +86,9 @@ function checkID(){
     let arr = guards[guards.indexOf(guards.find(x=>x.guard_id==id_res))].sleep_min
 
     min = findCommon(arr)
-
-   console.log(id_res + " * " + min + " = " + (id_res)*(min))
+    
+    //tem de ser id=3299 min=46
+    console.log(id_res + " * " + min + " = " + (id_res)*(min))
 
 }
 
