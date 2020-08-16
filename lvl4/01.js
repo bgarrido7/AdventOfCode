@@ -4,86 +4,79 @@
 function checkID(){
 
     const guards = []
-    let sleepMin = [], wakeMin =[]
     let id = -1
+    let max = 0
+
+    let id_res, min
 
     input.forEach( line => {//temos de dar 2 voltas para o input grande
-        
-    let sleep, wake
+       
+        let test_line =  line.split(' ')[2]
 
-    switch(line.split(' ')[2]){
-    
-        case 'Guard':
+        //switch(line.split(' ')[2]){
+      //  case 'Guard':
+      if(test_line == 'Guard')
             id = line.split('#')[1].split(' ')[0]    
+       //     console.log(id)
     
-        case 'falls':
-            sleep = parseInt( line.split(':')[1].split(']')[0] )
-    
-    
-        case 'wakes':
-            wake = parseInt( line.split(':')[1].split(']')[0] )
+        else if (test_line == 'falls')
+      //  case 'falls':
+            sleep = parseInt( line.split(':')[1].split(']'))   
+//        case 'wakes':
+        else if(test_line == 'wakes'){
+            wake = parseInt( line.split(':')[1].split(']') )
 
             let index = guards.indexOf(guards.find(x=>x.guard_id==id)) //get the guards that had this id
 
             if( index > -1){ //ja existe index
-                if(wake!= undefined && sleep != undefined)
                     guards[index].asleep_count +=  wake - sleep
-                    if(sleep!=undefined)
-                        guards[index].sleep_min.push(sleep) //=  guards[index].sleep_min.concat()
+                    for( let i = sleep ; i < wake ; i++){
+                        guards[index].sleep_min.push(parseInt(i.toString().slice(-1))) //=  guards[index].sleep_min.concat()
+                    }
             }
             else {
-                guards.push({guard_id: id, sleep_min: [sleep], asleep_count: (wake-sleep)})
-            }
-
-    //chama aqui uma funçao para atualizar array guards e manda parametros de id e tempo que capturou nos 2 casos anteriores e neste
-    
+                guards.push({guard_id: id, sleep_min: [], asleep_count:wake-sleep})
+                for( let i = sleep ; i < wake ; i++)
+                    guards[guards.indexOf(guards.find(x=>x.guard_id==id))].sleep_min.push(parseInt(i.toString().slice(-1))) 
+            }    
     }
-    console.log(guards)
- 
-/*
-        if( line.search('#') > -1){
-
-            if(firstGuard){
-
-                let index = guards.indexOf(guards.find(x=>x.guard_id==id)) //get the guards that had this id
-                        if( index > -1){
-                                guards[index].asleep_count +=  wakeMin - sleepMin
-                            
-                                guards[index].sleep_min = guards[index].sleep_min.concat(sleepMin)
-                            
-                        }
-            }
-
-            firstGuard = true
-
-            if(id != line.split('#')[1].split(' ')[0]){
-                sleepMin = []
-                wakeMin = []
-            }
-            id = line.split('#')[1].split(' ')[0]
-
-            if( guards.find(x => x.guard_id == id) == undefined ) //this id hasn't been saved yet
-                guards.push({guard_id: id, sleep_min:[], asleep_count:0})
-
-        }
-       
-        if( line.search('asleep') > -1){
-            sleepMin.push( parseInt( line.split(':')[1].split(']')[0] ) )
-        }  
-        if( line.search('wakes') > -1){
-            wakeMin.push( parseInt( line.split(':')[1].split(']')[0] ) )
-        }
-   // console.log("id->" ,id , "wake-> ", wakeMin, " sleep-> ",sleepMin)
-  */  
-
 
  })
 
-       console.log("--------\nguard array->",guards, "\n\n")
+ 
 
 
+ //ir buscar o id do guarda que tem o alseep_count maior
+   //    console.log("--------\nguard array->",guards, "\n\n")
 
-//   console.log(id + " * " + min + " = " + (parseInt(id)*parseInt(min)))
+
+guards.forEach(elem => {
+    if (max < elem.asleep_count){
+        max = elem.asleep_count
+        id_res = parseInt(elem.guard_id)
+    }
+})
+
+let array = guards[guards.indexOf(guards.find(x=>x.guard_id==id_res))].sleep_min
+min = findCommon(array)
+
+function findCommon(arr) {
+    var max = 1,
+        m = [],
+        val = arr[0],
+        i, x;
+
+    for(i = 0; i < arr.length; i ++) {
+        x = arr[i]
+        if (m[x]) {
+            ++m[x] > max && (max = m[i], val = x);
+        } else {
+            m[x] = 1;
+        }
+    } return val;    
+}
+
+   console.log(id_res + " * " + min + " = " + (id_res)*(min))
 
 }
 
