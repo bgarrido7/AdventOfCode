@@ -38,6 +38,7 @@ if( input[0].search('#') < 0 ){ //if input doesn't start with the guard id
     }
     sorted_input = input.concat(temp)
 }
+//console.log(sorted_input)
 
 function checkID(){
 
@@ -47,7 +48,7 @@ function checkID(){
 
     let id_res, min
 
-    input.forEach( line => {
+    sorted_input.forEach( line => {
        
         switch(line.split(' ')[2]){
 
