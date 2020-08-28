@@ -12,4 +12,4 @@ I wanted to learn **JavaScript** by attempting to do the advent of code
 
 open terminal and call the directory of the desired file, then run the command
 
-> node name.js
+> node file_name.js
