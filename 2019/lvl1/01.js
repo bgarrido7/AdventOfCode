@@ -1,8 +1,8 @@
+//const line = require('fs').readFileSync('example.txt').toString().split('\n');
 const line = require('fs').readFileSync('input.txt').toString().split('\n');
 
-let res = 0
-
 function fuel(){
+    let res = 0
 
     line.forEach( elem => {
         let fuel = Math.floor(parseInt(elem) / 3)-2 
