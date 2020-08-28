@@ -1,17 +1,18 @@
+const { read } = require('fs');
+
 const line = require('fs').readFileSync('input.txt').toString().split('\n');
 
+let res = 0
 
-function sum(){
-    var freq = 0;
+function fuel(){
 
-    for (let key in line){
-        if( !isNaN( parseInt(line[key]) ) ){
-            //console.log(parseInt(line[key]))
-            freq += parseInt(line[key]);
-            
-        }
-    }
-    return freq;
+    line.forEach( elem => {
+        let fuel = Math.floor(parseInt(elem) / 3)-2 
+        res += fuel
+        // console.log(fuel)
+    })
+
+    return res
 }
 
-console.log(sum())
+console.log(fuel())
