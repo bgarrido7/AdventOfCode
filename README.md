@@ -1,4 +1,4 @@
-# AdventOfCode-2018
+# AdventOfCode
 
 I wanted to learn **JavaScript** by attempting to do the advent of code 
 
