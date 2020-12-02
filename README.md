@@ -13,3 +13,10 @@ I wanted to learn **JavaScript** by attempting to do the advent of code
 open terminal and call the directory of the desired file, then run the command
 
 > node file_name.js
+
+
+### Search relevant method in
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+[LTW's javascript slides](https://web.fe.up.pt/~arestivo/presentation/javascript/)
