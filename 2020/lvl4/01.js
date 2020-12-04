@@ -7,7 +7,8 @@ function doThing() {
     let content = [];
 
     line.forEach((el, index, vector) => {
-        if (el === "" || vector[index + 1] === undefined) {
+
+        if (el === "" || vector[index + 1] === undefined) { //if detects new line break or EOF
             let isValid = true
             requirements.forEach(r => {
                 if (content.indexOf(r) < 0 && r != "cid")
