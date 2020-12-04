@@ -7,7 +7,7 @@ function doThing() {
     let content = [];
 
     line.forEach((el, index, vector) => {
-        if (el === "") {
+        if (el === "" || vector[index + 1] === undefined) {
             let isValid = true
             requirements.forEach(r => {
                 if (content.indexOf(r) < 0 && r != "cid")
@@ -23,14 +23,6 @@ function doThing() {
             content.push(c.split(":")[0]);
         });
 
-        if (vector[index + 1] === undefined) {
-            let isValid = true
-            requirements.forEach(r => {
-                if (content.indexOf(r) < 0 && r != "cid")
-                    isValid = false;
-            });
-            isValid ? valid++ : null;
-        }
     });
 
     return valid;
