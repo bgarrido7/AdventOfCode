@@ -11,7 +11,7 @@ function doThing() {
         if (el === "" || vector[index + 1] === undefined) { //if detects new line break or EOF
             let isValid = true
             requirements.forEach(r => {
-                if (content.indexOf(r) < 0 && r != "cid")
+                if (content.indexOf(r) < 0 && r !== "cid")
                     isValid = false;
             });
             isValid ? valid++ : null;
