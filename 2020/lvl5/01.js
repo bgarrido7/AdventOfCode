@@ -2,13 +2,11 @@ const plane = require('fs').readFileSync('input.txt').toString().split('\n');
 //const plane = require('fs').readFileSync('example.txt').toString().split('\n');
 
 function doThing() {
-    let row,
-        column;
     let seats = [];
 
     plane.forEach(elem => {
-        row = elem.slice(0, 7)
-        column = elem.slice(7);
+        let row = elem.slice(0, 7)
+        let column = elem.slice(7);
 
         row = row.replace(/F/gi, 0);
         row = row.replace(/B/gi, 1);
