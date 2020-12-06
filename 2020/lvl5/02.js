@@ -23,7 +23,7 @@ function doThing() {
     });
     plane.forEach((line, r) => {
         line.forEach((seat, c, vector) => {
-            if (vector[c - 1] == 1 && vector[c + 1] === vector[c - 1] && seat == 0)
+            if (vector[c - 1] === 1 && vector[c + 1] === vector[c - 1] && seat === 0)
                 mySeat = r * 8 + c;
         });
     });
