@@ -6,7 +6,9 @@ function doThing() {
     let answers = [];
 
     questions.forEach((letters, index, vector) => {
-        for (let l of letters) { answers.includes(l) ? null : answers.push(l); }
+        for (let l of letters) {
+            answers.includes(l) ? null : answers.push(l);
+        }
         if (letters === "" || vector[index + 1] === undefined) {
             count += answers.length
             answers = [];
