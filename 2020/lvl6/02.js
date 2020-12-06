@@ -10,23 +10,19 @@ function doThing() {
             for (let l of letters) { answers.push(l); }
             group.push(answers);
         }
-
         if (letters === "" || vector[index + 1] === undefined) {
-            console.log(group)
-
+            console.log(group, count)
             if (group.length == 1) {
                 count += group[0].length;
             } else {
-
-                // let yes = group[0];
-                // group.shift();
+                // let yes = group.shift();
+                // let add = [];
                 // yes.forEach(letter => {
-                //     let add = false;
                 //     for (let g of group) {
-                //         (g.indexOf(letter) >= 0) ? add = true: null;
+                //         (g.indexOf(letter) >= 0) ? (add.includes(letter) ? null : add.push(letter)) : null;
                 //     }
-                //     add ? count++ : null;
                 // });
+                // count += add.length;
             }
             answers = [];
             group = []
