@@ -12,13 +12,16 @@ function doThing() {
             group.push(answers);
         }
         if (letters === "" || vector[index + 1] === undefined) { //end of group
-            let firstSet = new Set(group[0]);
-
+            let firstSet = new Set(group[0]); //cria um set com os 'yes' da primeira pessoa do grupo
+            //caso haja só 1 pessoa este set é equivalente à interseçao final
             let intersection = new Set([...firstSet].filter(x => firstSet.has(x)));
+
+            //faz interceçao entre 'yes' da primeira pessoa e restantes do grupo
             group.forEach(g => {
                 nextSet = new Set(g);
                 intersection = new Set([...intersection].filter(x => nextSet.has(x)));
             });
+
             count += intersection.size;
 
             answers = [];
