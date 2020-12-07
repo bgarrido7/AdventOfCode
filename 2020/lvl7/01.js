@@ -20,11 +20,16 @@ function doThing() {
         let group = cleanRules.split(","); //group of bags
         let firstBag = group.shift()
         for (let bag of group) {
-            familyTree.has(firstBag) ?
-                familyTree.set(firstBag, [familyTree.get(firstBag), bag]) :
+            if (familyTree.has(firstBag)) {
+                (typeof(familyTree.get(firstBag)) == 'string') ?
+                (familyTree.set(firstBag, [familyTree.get(firstBag), bag])) :
+                (familyTree.set(firstBag, [...familyTree.get(firstBag), bag]))
+            } else {
                 familyTree.set(firstBag, bag);
+            }
         }
     });
+    console.log(familyTree);
     let finalParents = [];
     let findThisColor = ['shiny gold'];
     let nextParent;
@@ -40,7 +45,7 @@ function doThing() {
     let result = Object.keys(finalParents).reduce(function(r, k) {
         return r.concat(finalParents[k]);
     }, []);
-    console.log(result)
+    console.log(result);
     return result.length;
 }
 console.log(doThing());
