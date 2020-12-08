@@ -11,7 +11,6 @@ function doThing() {
         else
             visitedInst.push(i);
 
-        // console.log(i, line[i]);
         let op = line[i].split(" ")[0];
         let arg = parseInt(line[i].split(" ")[1]);
         switch (op) {
@@ -21,7 +20,7 @@ function doThing() {
             case ('jmp'):
                 i += (arg - 1)
                 break;
-            case ('nop'):
+            default:
                 break;
         }
     }
