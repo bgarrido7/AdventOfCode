@@ -1,5 +1,5 @@
-const rules = require('fs').readFileSync('input.txt').toString().split('\n');
-//const rules = require('fs').readFileSync('example.txt').toString().split('\n');
+//const rules = require('fs').readFileSync('input.txt').toString().split('\n');
+const rules = require('fs').readFileSync('example.txt').toString().split('\n');
 
 function findParents(parentsWithGold) {
     let newParents = [];
