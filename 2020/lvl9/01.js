@@ -2,7 +2,7 @@ const line = require('fs').readFileSync('input.txt').toString().split('\n');
 //const line = require('fs').readFileSync('example.txt').toString().split('\n');
 
 function doThing() {
-    let preambleLength = 25;
+    let preambleLength = 25; //switch to 5 for the example.txt input
 
     for (let i = 0; i < ((line.length) - preambleLength); i++) {
         let preamble = line.slice(i, preambleLength + i);
