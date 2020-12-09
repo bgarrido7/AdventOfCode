@@ -15,7 +15,7 @@ open terminal and call the directory of the desired file, then run the command
 > node file_name.js
 
 
-### Search relevant method in
+### Search relevant information in
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
