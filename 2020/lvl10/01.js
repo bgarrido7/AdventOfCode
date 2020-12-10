@@ -21,19 +21,3 @@ function doThing() {
 }
 
 console.log(doThing())
-
-
-/**
- * 0 jolts -> 1, 2, 3 joltage higher => 1 //1
- * 1 jolts -> 1, 2, 3 joltage higher => 4 //3
- * 4 jolts => 5 (in order to not skip any adapter) //1
- * 5 => 6, 6 => 7 //1 //1
- * 7 => 10 //3
- * 10 => 11, 11 => 12 //1 //1
- * 12 => 15, 15 => 16 //3 //1
- * 16 => 19 //3
- * 19 +3 ==> 22 //3
- * 
- * adapter 1 =>> 7
- * adapter 3 =>> 5
- */
