@@ -16,8 +16,8 @@ I wanted to improve my **JavaScript** knowledge by attempting to do the advent o
 | Day 7: Handy Haversacks| :x: | :x: |
 | Day 8: Handheld Halting| :heavy_check_mark: | :x: |
 | Day 9: Encoding Error| :heavy_check_mark: | :heavy_check_mark: |
-| Day 10: TBD| :soon: | :soon: |
-| Day 11: TBD| :calendar: | :calendar: |
+| Day 10: TBD| :heavy_check_mark: | :X: |
+| Day 11: TBD| :soon: | :soon: |
 | Day 12: TBD| :calendar: | :calendar: |
 | Day 13: TBD| :calendar: | :calendar: |
 | Day 14: TBD| :calendar: |  :calendar:|
