@@ -17,8 +17,8 @@ I wanted to improve my **JavaScript** knowledge by attempting to do the advent o
 | Day 8: Handheld Halting| :heavy_check_mark: | :x: |
 | Day 9: Encoding Error| :heavy_check_mark: | :heavy_check_mark: |
 | Day 10: Adapter Array | :heavy_check_mark: | :x: |
-| Day 11: Seating System| :x: | :x: |
-| Day 12: TBD| :calendar: | :calendar: |
+| Day 11: Seating System| :grey_question: | :x: |
+| Day 12: Rain Risk| :calendar: | :calendar: |
 | Day 13: TBD| :calendar: | :calendar: |
 | Day 14: TBD| :calendar: |  :calendar:|
 | Day 15: TBD|  :calendar:|  :calendar:|
