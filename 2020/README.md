@@ -19,7 +19,7 @@ I wanted to improve my **JavaScript** knowledge by attempting to do the advent o
 | Day 10: Adapter Array | :heavy_check_mark: | :x: |
 | Day 11: Seating System| :grey_question: |  |
 | Day 12: Rain Risk| :heavy_check_mark: |  |
-| Day 13: Shuttle Search| | :x: |
+| Day 13: Shuttle Search| :heavy_check_mark:| :x: |
 | Day 14: TBD| :soon: |  :soon:|
 | Day 15: TBD|  :calendar:|  :calendar:|
 | Day 16: TBD|  :calendar:|  :calendar:|
