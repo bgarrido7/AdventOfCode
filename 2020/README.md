@@ -33,5 +33,5 @@ I wanted to improve my **JavaScript** knowledge by attempting to do the advent o
 | Day 24: TBD| :calendar:| :calendar:|
 | Day 25: TBD| :calendar:|:calendar: |
 
-:book: -> not read yet
-
+* :book: not read yet
+* :grey_question: almost there
