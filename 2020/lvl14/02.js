@@ -7,7 +7,6 @@ function replaceAt(string, index, replace) {
 
 function getValues(mem) {
     let values = [];
-
     for (let i = 0; i < Math.pow(2, (mem.match(/X/gi).length)); i++) {
         values.push(mem);
     }
@@ -15,6 +14,7 @@ function getValues(mem) {
     for (let i = 0; i < values.length / 2; i++) { include.push(i); }
     let size = values.length / 2;
     while (values.some(v => v.includes("X"))) {
+        //  console.log(include)
         size = size / 2;
         let copy = true,
             num = 1;
@@ -36,8 +36,10 @@ function getValues(mem) {
 }
 
 function doThing() {
-    let res = [];
+    let res = new Object; //guardar em Object em vez de array or something
     let mask;
+    let sum = 0;
+
     initialization.forEach(ini => {
         if (ini.split(" ")[0] === "mask") {
             mask = ini.split("= ")[1];
@@ -49,14 +51,23 @@ function doThing() {
                     mem = replaceAt(mem, index, bit);
                 }
             });
+            // console.log(mask)
             let possibleMem = getValues(mem);
+            // console.log(possibleMem, val)
             possibleMem.forEach(m => {
-                res[parseInt(parseInt(m, 2).toString(10))] = val;
+                // console.log(m)
+                let key = parseInt(m, 2).toString(10);
+                res[key] = val
+                    // res.hasOwnProperty(key) ?
+                    //     res.key = val : res[key] = val
             });
         }
     });
-
-    return res.reduce((a, b) => a + b);
+    // console.log(res);
+    Object.entries(res).forEach(([key, value]) => {
+        sum += value;
+    });
+    return sum;
 }
 
 console.log(doThing())
