@@ -13,7 +13,7 @@ function doThing() {
             mask = ini.split("= ")[1];
             //console.log(mask)
         } else {
-            let mem = ini.slice(4, 5);
+            let mem = parseInt(ini.split("[")[1].split("]")[0]);
             let val = parseInt(ini.split("= ")[1]).toString(2);
             while (val.length - 1 < mask.length - 1) {
                 val = "0" + val;
@@ -27,10 +27,13 @@ function doThing() {
                 }
             });
             //console.log("mask:", mask, "\nnewV:", val);
+
             res[mem] = parseInt(parseInt(val, 2).toString(10));
         }
+
     });
     //console.log(res)
+
     return res.reduce((a, b) => a + b);
 }
 
