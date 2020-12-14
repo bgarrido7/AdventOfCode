@@ -14,7 +14,6 @@ function getValues(mem) {
     for (let i = 0; i < values.length / 2; i++) { include.push(i); }
     let size = values.length / 2;
     while (values.some(v => v.includes("X"))) {
-        //  console.log(include)
         size = size / 2;
         let copy = true,
             num = 1;
@@ -36,7 +35,7 @@ function getValues(mem) {
 }
 
 function doThing() {
-    let res = new Object; //guardar em Object em vez de array or something
+    let res = new Object;
     let mask;
     let sum = 0;
 
@@ -46,27 +45,20 @@ function doThing() {
         } else {
             let mem = parseInt(ini.split("[")[1].split("]")[0]).toString(2).padStart(mask.length, "0");
             let val = parseInt(ini.split("= ")[1]);
+
             mask.split("").forEach((bit, index) => {
-                if (bit !== "0") {
+                if (bit !== "0")
                     mem = replaceAt(mem, index, bit);
-                }
             });
-            // console.log(mask)
             let possibleMem = getValues(mem);
-            // console.log(possibleMem, val)
             possibleMem.forEach(m => {
-                // console.log(m)
                 let key = parseInt(m, 2).toString(10);
-                res[key] = val
-                    // res.hasOwnProperty(key) ?
-                    //     res.key = val : res[key] = val
+                res[key] = val;
             });
         }
     });
-    // console.log(res);
-    Object.entries(res).forEach(([key, value]) => {
-        sum += value;
-    });
+
+    Object.entries(res).forEach(([key, value]) => { sum += value; });
     return sum;
 }
 
