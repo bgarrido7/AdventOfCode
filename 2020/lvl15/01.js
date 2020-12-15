@@ -26,6 +26,6 @@ let testArray = [
     [3, 1, 2],
 ];
 
-testArray.forEach(t => { console.log(doThing(t, 2020)) })
+testArray.forEach(t => { console.log(doThing(t)) })
 
-console.log(doThing(numbers));
+console.log("\n" + doThing(numbers));
