@@ -21,7 +21,7 @@ I wanted to improve my **JavaScript** knowledge by attempting to do the advent o
 | Day 12: Rain Risk| :heavy_check_mark: | :book: |
 | Day 13: Shuttle Search| :heavy_check_mark:| :x: |
 | Day 14: Docking Data| :heavy_check_mark: |:heavy_check_mark: |
-| Day 15: TBD|  :heavy_check_mark:|  |
+| Day 15: Rambunctious Recitation|  :heavy_check_mark:|  |
 | Day 16: TBD|  :soon:|  :soon:|
 | Day 17: TBD|  :calendar:| :calendar: |
 | Day 18: TBD|  :calendar:| :calendar: |
