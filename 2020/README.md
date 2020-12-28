@@ -22,7 +22,7 @@ I wanted to improve my **JavaScript** knowledge by attempting to do the advent o
 | Day 13: Shuttle Search| :heavy_check_mark:| :x: |
 | Day 14: Docking Data| :heavy_check_mark: |:heavy_check_mark: |
 | Day 15: Rambunctious Recitation|  :heavy_check_mark:| :grey_question: |
-| Day 16: Ticket Translation|  :calendar:|  :calendar:|
+| Day 16: Ticket Translation|  :heavy_check_mark:|  :calendar:|
 | Day 17: Conway Cubes|  :calendar:| :calendar: |
 | Day 18:  Operation Order|  :calendar:| :calendar: |
 | Day 19:  Monster Messages|  :calendar:|  :calendar:|
