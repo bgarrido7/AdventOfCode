@@ -2,35 +2,34 @@
 const homework = require('fs').readFileSync('example.txt').toString().split('\n');
 
 function doThing() {
-
+    let sum = 0;
+    let expression = homework[0]
     for (let expression of homework) {
-        expression = expression.replace(/\(/g, "( ")
-        expression = expression.replace(/\)/g, " )")
-        expression = expression.split(" ");
 
+        expression = expression.replace(/\)/g, " )").replace(/\(/g, "( ").split(" ");
         while (expression.includes("(")) {
-            expression.forEach((exp, index) => {
-                if (exp === "(") {
-                    let math = expression.slice(index + 1, expression.indexOf(")") + 1);
+            console.log(expression.toString().replace(/,/g, ''));
+            let i = 0;
+            let window = expression.slice(i, i + 3);
 
-                    if (math.includes("(")) {
-                        let math2 = math.slice(math.indexOf("(") + 1, math.indexOf(")"));
-                        math.splice(math.indexOf("(") + 1);
-                        math2 = math2.toString().replace(/,/g, '');
-                        math[math.indexOf("(")] = eval(math2).toString();
-                        math.push(")");
-                    } else {
-                        expression.splice(index + 1, math.length);
-                        math.splice(-1, 1);
-                        math = math.toString().replace(/,/g, '');
-                        expression[index] = eval(math).toString();
-                    }
-                }
-            });
+            while (window.includes("(")) {
+                i++;
+                window = expression.slice(i, i + 3);
+                console.log(window, window.includes("("));
+            }
+            window = eval(window.toString().replace(/,/g, ''));
+            console.log(window);
+
+            i !== 0 ?
+                expression.splice(i - 1, 5, window.toString()) :
+                expression.splice(0, 3, window.toString());
         }
-        console.log(expression.toString().replace(/,/g, ''));
-        console.log(eval(expression.toString().replace(/,/g, ''))); //eval respeita a orderm da * mas eu nao quero isso, quero tudo seguido
+
+        console.log(eval(expression.toString().replace(/,/g, '')));
+        sum += eval(expression.toString().replace(/,/g, ''));
     }
+
+    return sum;
 }
 
 console.log(doThing())
