@@ -29,7 +29,7 @@ function doThing() {
             });
         }
         console.log(expression.toString().replace(/,/g, ''));
-        console.log(eval(expression.toString().replace(/,/g, '')));
+        console.log(eval(expression.toString().replace(/,/g, ''))); //eval respeita a orderm da * mas eu nao quero isso, quero tudo seguido
     }
 }
 
