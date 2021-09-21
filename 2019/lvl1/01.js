@@ -1,16 +1,11 @@
 //const line = require('fs').readFileSync('example.txt').toString().split('\n');
 const line = require('fs').readFileSync('input.txt').toString().split('\n');
 
-function fuel(){
-    let res = 0
-
-    line.forEach( elem => {
-        let fuel = Math.floor(parseInt(elem) / 3)-2 
-        res += fuel
-        // console.log(fuel)
+function fuel() {
+    let sum = 0
+    line.forEach(mass => {
+        sum += Math.floor(mass / 3) - 2
     })
-
-    return res
+    return sum
 }
-
 console.log(fuel())
