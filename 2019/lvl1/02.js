@@ -1,26 +1,17 @@
-//const line = require('fs').readFileSync('example.txt').toString().split('\n');
 const line = require('fs').readFileSync('input.txt').toString().split('\n');
 
-function fuel(){
-    let answer = 0
-
-    line.forEach( elem => {
-        //console.log("\n-----------\n",elem)
-        let fuel = Math.floor(parseInt(elem) / 3)-2 
-
-        let needed = fuel, rest = fuel
-
-        while( (Math.floor(rest / 3)-2) > 0 ){
-            //console.log(rest)
-            rest = Math.floor(rest / 3) - 2
-            needed += rest
-        }
-
-        //console.log("sobras->",needed)
-        answer += needed
-    })
-
-    return answer
+function neededFuel(input) {
+    return Math.floor(input / 3) - 2
 }
 
-console.log(fuel())
+function solution() {
+    let totalFuel = 0;
+    line.forEach(mass => {
+        while (neededFuel(mass) > 0) {
+            mass = neededFuel(mass);
+            totalFuel += mass;
+        }
+    })
+    return totalFuel;
+}
+console.log(solution());
