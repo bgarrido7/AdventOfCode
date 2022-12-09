@@ -1,6 +1,6 @@
 # AdventOfCode-2019
 
-I wanted to improve my **TypeScript** knowledge by attempting to do the advent of code from [2022](https://adventofcode.com/2022) 
+Passing time with Puzzle solving using **TypeScript** using The Advent of Code from [2022](https://adventofcode.com/2022) 
 
 
 # Status
