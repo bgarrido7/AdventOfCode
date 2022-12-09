@@ -7,7 +7,7 @@ I wanted to improve my **TypeScript** knowledge by attempting to do the advent o
 
 | Day  | Part One | Part Two | 
 |---|:---:|:---:|
-| Day 1| :heavy_check_mark: | :pencil: |
+| Day 1| :heavy_check_mark: | :white_check_mark: |
 | Day 2| :pencil: | :pencil: |
 | Day 3| :pencil: | :pencil: |
 | Day 4| :pencil: | :pencil: |
