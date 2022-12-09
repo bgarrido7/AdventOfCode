@@ -8,7 +8,7 @@ Passing time with Puzzle solving using **TypeScript** using The Advent of Code f
 | Day  | Part One | Part Two | 
 |---|:---:|:---:|
 | Day 1| :heavy_check_mark: | :white_check_mark: |
-| Day 2| :pencil: | :pencil: |
+| Day 2| :heavy_check_mark: | :white_check_mark: |
 | Day 3| :pencil: | :pencil: |
 | Day 4| :pencil: | :pencil: |
 | Day 5| :pencil: | :pencil: |
