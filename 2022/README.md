@@ -12,7 +12,7 @@ Passing time with Puzzle solving using **TypeScript** using The Advent of Code f
 | Day 3| :heavy_check_mark: | :pencil: |
 | Day 4| :pencil: | :calendar: |
 | Day 5| :calendar: | :calendar: |
-| Day 6| :heavy_check_mark: | :calendar: |
+| Day 6| :heavy_check_mark: | :white_check_mark: |
 | Day 7| :calendar: | :calendar: |
 | Day 8| :calendar: | :calendar: |
 | Day 9| :calendar: | :calendar: |
