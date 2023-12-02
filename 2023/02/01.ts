@@ -3,7 +3,7 @@ const doc = require('fs').readFileSync('input.txt').toString().split('\n');
 
 // 12 red cubes, 13 green cubes, and 14 blue cubes
 function checkPossibility(num, color) {
-    switch (color) {
+    switch (color.trim()) {
         case 'red':
             if (num > 12)
                 return false;
