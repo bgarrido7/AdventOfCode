@@ -20,6 +20,8 @@ OR
 
 ### Search relevant information in
 
+[Python Docs](https://docs.python.org/3/contents.html)
+
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 [LTW's javascript slides](https://web.fe.up.pt/~arestivo/presentation/javascript/)
