@@ -12,6 +12,6 @@ right.sort()
 
 total = 0
 for i in range(len(right)):
-    total += right[i] - left[i]
+    total += abs(right[i] - left[i])
     
 print(total)
