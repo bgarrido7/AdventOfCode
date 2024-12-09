@@ -14,6 +14,9 @@ open terminal and call the directory of the desired file, then run the command
 
 > node file_name.js
 
+OR
+
+> python name.py
 
 ### Search relevant information in
 
