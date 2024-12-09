@@ -7,7 +7,7 @@ I wanted to learn **pyhton** by attempting to do the advent of code from [2024](
 | Day  | Part One | Part Two | 
 |---|:---:|:---:|
 | Day 1| :heavy_check_mark: | :heavy_check_mark: |
-| Day 2| :x: | :x: |
+| Day 2| :heavy_check_mark: | :heavy_check_mark: |
 | Day 3| :x: | :x: |
 | Day 4| :x: | :x: |
 | Day 5| :x: | :x: |
