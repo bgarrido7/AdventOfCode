@@ -9,5 +9,4 @@ with open("input.txt", "r") as file:
                 if len(num) == 2 and num[0].isnumeric() and num[1].isnumeric():
                     multiply += int(num[0]) * int(num[1])
 
-
 print(multiply)
