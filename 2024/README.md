@@ -1,6 +1,6 @@
 # AdventOfCode-2024
 
-I wanted to learn **pyhton** by attempting to do the advent of code from [2024](https://adventofcode.com/2024)
+I wanted to refresh my **pyhton** skills by attempting to do the advent of code from [2024](https://adventofcode.com/2024)
 
 # Status
 
